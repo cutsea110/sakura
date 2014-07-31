@@ -14,6 +14,11 @@ wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&d
 # 皮膚科も
 # gHeika2=1
 
+# 佳子も
+# gGroupFlg1=1
+# 皮膚科も
+# gGroupHeika12=1
+
 # キャンセル
 # mode=1
 
