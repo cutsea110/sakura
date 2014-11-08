@@ -5,6 +5,10 @@ wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&d
 #wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=10&min=0&index=0&kaNo=1&koiNo=3"
 # 辻榮先生
 #wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=10&min=0&index=0&kaNo=1&koiNo=28"
+# 神田先生
+#wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=10&min=0&index=0&kaNo=1&koiNo=11"
+# 井出先生
+#wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=10&min=0&index=0&kaNo=1&koiNo=12"
 # 希望なし
 #wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=10&min=0&index=0&kaNo=1&koiNo=1"
 
