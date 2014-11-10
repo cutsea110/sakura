@@ -26,3 +26,5 @@ wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&d
 # キャンセル
 # mode=1
 
+# 午後だとindex=1
+# 午前午後のindex指定と時間が不整合だとアウトになるかも
