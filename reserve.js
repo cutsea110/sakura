@@ -25,8 +25,9 @@ function ReserveSakura() {
     // ジョブ起動は予約開始の1分前に設定されている前提(運用条件)
     now.setTime(now.getTime() + 60 * 1000);
     var hh = now.getHours(),
-        mm = now.getMinutes();
-    var param = 'mode=0&No=100678&date=' + ymd + '&hour=' + hh + '&min=' + mm + '&index=0&kaNo=1&koiNo=' + doc;
+        mm = now.getMinutes(),
+        idx = hh < 13 ? 0 : 1;
+    var param = 'mode=0&No=100678&date=' + ymd + '&hour=' + hh + '&min=' + mm + '&index=' + idx + '&kaNo=1&koiNo=' + doc;
     Logger.log('post ' + url + '?' + param);
     MailApp.sendEmail(mailTo, 'さくら耳鼻科予約待機', hh + ':' + mm + 'に予約を入れるべく集中します!');
 
@@ -42,7 +43,7 @@ function ReserveSakura() {
     Logger.log('requesting...');
     var res = UrlFetchApp.fetch(url, option);
     Logger.log('requested.');
-    MailApp.sendEmail(mailTo, 'さくら耳鼻科予約成功', res.getContentText());
+    MailApp.sendEmail(mailTo, 'さくら耳鼻科予約成功', res.getContentText('UTF-8'));
     Logger.log('done.');
   } catch(e) {
     MailApp.sendEmail(mailTo, 'さくら耳鼻科予約失敗', e.message);
