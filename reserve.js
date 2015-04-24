@@ -43,7 +43,7 @@ function ReserveSakura() {
     Logger.log('requesting...');
     var res = UrlFetchApp.fetch(url, option);
     Logger.log('requested.');
-    MailApp.sendEmail(mailTo, 'さくら耳鼻科予約成功', res.getContentText('UTF-8'));
+    MailApp.sendEmail(mailTo, 'さくら耳鼻科予約結果(' + res.getResponseCode() + ')', res.getContentText('UTF-8'));
     Logger.log('done.');
   } catch(e) {
     MailApp.sendEmail(mailTo, 'さくら耳鼻科予約失敗', e.message);
