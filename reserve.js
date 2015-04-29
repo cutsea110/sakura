@@ -39,6 +39,8 @@ function ReserveSakura() {
 
     // 59秒まで待機させたい
     while (new Date().getSeconds() < 59);
+    // さらに0秒を回るまで待機するs
+    while (new Date().getSeconds() == 59);
 
     Logger.log('requesting...');
     var resText = '';
