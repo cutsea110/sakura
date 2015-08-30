@@ -30,3 +30,8 @@ wget http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&d
 
 # 午後だとindex=1
 # 午前午後のindex指定と時間が不整合だとアウトになるかも
+
+
+# モニタ方法
+while :; do sleep 1; wget -O /dev/stdout "http://ctsrsv.jp/sakura-jibika/roomview.asp?Mode=0&No=100678&Name=%88%C9%93%8C%81%40%93%DE%8F%8F&date=2015/08/31&kaNo=1&koiNo=&Eng=0" | nkf -w; done
+
