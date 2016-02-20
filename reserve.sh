@@ -32,6 +32,18 @@ wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --p
 # 午後だとindex=1
 # 午前午後のindex指定と時間が不整合だとアウトになるかも
 
+# 検査予約
+# Hr Min index
+# 10:00      0
+# 10:15      1
+# 10:30      2
+# 10:45      3
+d=`date "+%Y/%m/%d"`
+h=10
+m=30
+idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
+wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=16&min=0&index=24&kaNo=3&koiNo=16" | nkf -w
+
 
 # モニタ方法
 while :; do sleep 1; wget --inet4-only -O /dev/stdout "http://ctsrsv.jp/sakura-jibika/roomview.asp?Mode=0&No=100678&Name=%88%C9%93%8C%81%40%93%DE%8F%8F&date=2015/08/31&kaNo=1&koiNo=&Eng=0" | nkf -w; done
