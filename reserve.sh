@@ -38,11 +38,16 @@ wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --p
 # 10:15      1
 # 10:30      2
 # 10:45      3
+# 石井先生
+# koiNo 20
+# 井出先生
+#       24
 d=`date "+%Y/%m/%d"`
 h=10
-m=30
+m=00
 idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
-wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=16&min=0&index=24&kaNo=3&koiNo=16" | nkf -w
+koi=20
+wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
 
 
 # モニタ方法
