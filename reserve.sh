@@ -42,13 +42,21 @@ wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --p
 # koiNo 20
 # 井出先生
 #       24
+#d=`date "+%Y/%m/%d"`
+#h=10
+#m=00
+#idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
+#koi=20
+#wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
+
+
 d=`date "+%Y/%m/%d"`
-h=10
-m=00
-idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
+idx=0
+h=`expr $idx / 4 \+ 10`
+m=`expr $idx % 4 \* 15`
+m=`printf %02d $m`
 koi=20
 wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
-
 
 # モニタ方法
 while :; do sleep 1; wget --inet4-only -O /dev/stdout "http://ctsrsv.jp/sakura-jibika/roomview.asp?Mode=0&No=100678&Name=%88%C9%93%8C%81%40%93%DE%8F%8F&date=2015/08/31&kaNo=1&koiNo=&Eng=0" | nkf -w; done
