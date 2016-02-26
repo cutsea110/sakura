@@ -1,7 +1,7 @@
 #!/bin/sh
 koi=20
 
-for idx in "$@";
+for idx in 0 0 0 0 0 0 0 0 0 0;
 do
   d=`date "+%Y/%m/%d"`
   h=`expr $idx / 4 \+ 10`

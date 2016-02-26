@@ -42,12 +42,12 @@ wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --p
 # koiNo 20
 # 井出先生
 #       24
-#d=`date "+%Y/%m/%d"`
-#h=10
-#m=00
-#idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
-#koi=20
-#wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
+d=`date "+%Y/%m/%d"`
+h=10
+m=00
+idx=`expr \( $h \- 10 \) \* 4 \+ \( $m \/ 15 \)`
+koi=20
+wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
 
 
 d=`date "+%Y/%m/%d"`
