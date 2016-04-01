@@ -59,5 +59,5 @@ koi=20
 wget --inet4-only -O /dev/stdout http://ctsrsv.jp/sakura-jibika/rsvroom2.asp --post-data="mode=0&No=100678&date=$d&hour=$h&min=$m&index=$idx&kaNo=3&koiNo=$koi" | nkf -w
 
 # モニタ方法
-while :; do sleep 1; wget --inet4-only -O /dev/stdout "http://ctsrsv.jp/sakura-jibika/roomview.asp?Mode=0&No=100678&Name=%88%C9%93%8C%81%40%93%DE%8F%8F&date=2015/08/31&kaNo=1&koiNo=&Eng=0" | nkf -w; done
+while :; do sleep 1; wget --inet4-only -O /dev/stdout "http://ctsrsv.jp/sakura-jibika/roomview2.asp?ROOMID=1&No=100678&Tel=1102&Eng=0&Name=%88%C9%93%8C%81%40%93%DE%8F%8F&kaNo=1&koiNo=0" | nkf -w | grep '<TD'; done
 
